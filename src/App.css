@@ -1,0 +1,8 @@
+.app__container {
+  padding: 4rem 8rem;
+  text-transform: uppercase;
+}
+
+.app__container h2{
+  font-weight: 800;
+}
