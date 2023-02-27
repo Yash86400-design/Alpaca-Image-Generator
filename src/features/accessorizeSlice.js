@@ -4,10 +4,12 @@ const accessorizeSlice = createSlice({
   name: 'accessorize',
   initialState: {
     selectedButton: 'hair',
+    defaultState: true,
   },
   reducers: {
     setSelectedButton: (state, action) => {
       state.selectedButton = action.payload;
+      state.defaultState = false;
     }
   }
 });

@@ -58,9 +58,14 @@
   transition: 0.5s ease;
 }
 
-.custom__buttons:hover,
-.custom__buttons:active {
+.custom__buttons:hover {
   background: darkblue;
+  color: #fff;
+}
+
+/* For Buttons */
+.active {
+  background-color: darkblue;
   color: #fff;
 }
 

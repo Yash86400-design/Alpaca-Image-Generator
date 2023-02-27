@@ -1,12 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './accessorizeStyle.css';
-import { accessories, background, ears, eyes, hair, leg, mouth, neck, nose } from '../imagecontainer/imports';
+import { accessories, background, ears, eyes, hair, leg, mouth, neck } from '../imagecontainer/imports';
 import { useSelector } from 'react-redux';
 
 function AccessorizeStyle() {
   const buttonName = useSelector((state) => state.accessorize.selectedButton);
-  console.log(buttonName);
-
+  const [activeButton, setActiveButton] = useState('');
   let value;
 
   switch (buttonName) {
@@ -52,7 +51,7 @@ function AccessorizeStyle() {
     <div className='alpaca__style-container'>
       <h4>Style</h4>
       {Object.keys(value).map((button) => (
-        <button className='custom__buttons'>{button}</button>
+        <button key={button} className={button === activeButton ? 'custom__buttons active' : 'custom__buttons'} onClick={() => setActiveButton(button)}>{button}</button>
       ))}
     </div>
   );
