@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.image__container {
+  width: 100%;
+  height: 400px;
+}
+
+.buttons__container {
+  display: flex;
+  /* width: 48%; */
+  justify-content: space-between;
+}
+
+.buttons__container button {
+  padding: 15px;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  border-radius: 10px;
+}

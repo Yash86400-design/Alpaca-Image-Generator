@@ -1,0 +1,11 @@
+.accessorize__container h4 {
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.accessorize__buttons-container {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
