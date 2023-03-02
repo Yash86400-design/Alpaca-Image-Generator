@@ -1,20 +1,31 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './accessorizeStyle.css';
-import { accessories, background, ears, eyes, hair, leg, mouth, neck } from '../imagecontainer/imports';
-import { useSelector } from 'react-redux';
+import { accessories, backgrounds, ears, eyes, hair, leg, mouth, neck } from '../imagecontainer/imports';
+import { useDispatch, useSelector } from 'react-redux';
+import { changeImage } from '../../features/accessorizeSlice';
 
 function AccessorizeStyle() {
   const buttonName = useSelector((state) => state.accessorize.selectedButton);
-  const [activeButton, setActiveButton] = useState('');
-  let value;
 
+  const defaultStyle = useSelector((state) => state.accessorize.selectedStyle);
+
+  const [activeButton, setActiveButton] = useState(defaultStyle);
+
+  const dispatch = useDispatch();
+
+
+  // useState(() => {
+  //   setActiveButton('');
+  // }, []);
+
+  let value;
   switch (buttonName) {
     case 'accessories':
       value = accessories;
       break;
 
     case 'background':
-      value = background;
+      value = backgrounds;
       break;
 
     case 'ears':
@@ -44,14 +55,30 @@ function AccessorizeStyle() {
     default:
       break;
   }
-  // Now the problem is to render all the buttons...
 
-  // Object.keys(backgrounds).forEach(key => { console.log(key); });
+  // console.log(defaultStyle);
+
+  useEffect(() => {
+    dispatch(changeImage({ key: buttonName, value: activeButton }));
+  }, [activeButton, dispatch]);
+
+  // console.log(buttonName, activeButton);
+
+  /*
+  Now the problem is to render all the buttons...
+  
+  Object.keys(backgrounds).forEach(key => { console.log(key); });
+  */
   return (
     <div className='alpaca__style-container'>
       <h4>Style</h4>
+      {/*
+          It's inside the map function..
+       <button key={button} className={button === activeButton ? 'custom__buttons active' : 'custom__buttons'} onClick={() => setActiveButton(button)}>{button}</button> 
+       
+       */}
       {Object.keys(value).map((button) => (
-        <button key={button} className={button === activeButton ? 'custom__buttons active' : 'custom__buttons'} onClick={() => setActiveButton(button)}>{button}</button>
+        <button key={button} className={`custom__buttons ${button === activeButton ? 'active' : ''}`} onClick={() => setActiveButton(button)}>{button}</button>
       ))}
     </div>
   );

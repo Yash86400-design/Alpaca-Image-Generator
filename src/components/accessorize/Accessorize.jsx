@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setSelectedButton } from '../../features/accessorizeSlice';
+import { setSelectedButton, setStyleDefault } from '../../features/accessorizeSlice';
 import './accessorize.css';
 
 const accessorizeNames = [
@@ -17,7 +17,7 @@ function Accessorize() {
     // <AccessorizeStyle buttonName={name} />
     setActiveButton(name);
     dispatch(setSelectedButton(name));
-    console.log(defaultState);
+    dispatch(setStyleDefault());
   };
 
   useEffect(() => {

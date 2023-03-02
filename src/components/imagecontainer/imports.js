@@ -73,21 +73,21 @@ import defaultNeck from '../../assets/neck/default.png';
 import nose from '../../assets/nose.png';
 
 // Objects solved a lot of problems for me...
-const accessories = { 'earings': earings, 'flower': flower, 'glasses': glasses, 'headphone': headphone };
+const accessories = { 'default': headphone, 'earings': earings, 'flower': flower, 'glasses': glasses };
 
-const background = { 'blue50': blue50, 'blue60': blue60, 'blue70': blue70, 'darkblue30': darkblue30, 'darkblue50': darkblue50, 'darkblue70': darkblue70, 'green50': green50, 'green60': green60, 'green70': green70, 'grey40': grey40, 'grey70': grey70, 'grey80': grey80, 'red50': red50, 'red60': red60, 'red70': red70, 'yellow50': yellow50, 'yellow60': yellow60, 'yellow70': yellow70 };
+const backgrounds = { 'default': darkblue50, 'blue50': blue50, 'blue60': blue60, 'blue70': blue70, 'darkblue30': darkblue30, 'darkblue70': darkblue70, 'green50': green50, 'green60': green60, 'green70': green70, 'grey40': grey40, 'grey70': grey70, 'grey80': grey80, 'red50': red50, 'red60': red60, 'red70': red70, 'yellow50': yellow50, 'yellow60': yellow60, 'yellow70': yellow70 };
 
 const ears = { 'default': defaultEar, 'tilt-backward': tiltBackwardEar, 'tilt-forward': tiltForwardEar };
 
-const eyes = { 'angry': angry, 'naughty': naughty, 'panda': panda, 'smart': smart, 'star': star, 'default': defaultEye };
+const eyes = { 'default': defaultEye, 'angry': angry, 'naughty': naughty, 'panda': panda, 'smart': smart, 'star': star };
 
-const hair = { 'bang': bang, 'curls': curls, 'elegant': elegant, 'fancy': fancy, 'quiff': quiff, 'short': short, 'default': defaultHair };
+const hair = { 'default': defaultHair, 'bang': bang, 'curls': curls, 'elegant': elegant, 'fancy': fancy, 'quiff': quiff, 'short': short };
 
-const leg = { 'bubbleTea': bubbleTea, 'cookie': cookie, 'gameConsole': gameConsole, 'tilt-backward': tiltBackwardLeg, 'tilt-forward': tiltForwardLeg, 'default': defaultLeg };
+const leg = { 'default': defaultLeg, 'bubbleTea': bubbleTea, 'cookie': cookie, 'gameConsole': gameConsole, 'tilt-backward': tiltBackwardLeg, 'tilt-forward': tiltForwardLeg };
 
-const mouth = { 'astonished': astonished, 'eating': eating, 'laugh': laugh, 'tongue': tongue, 'default': defaultMouth };
+const mouth = { 'default': defaultMouth, 'astonished': astonished, 'eating': eating, 'laugh': laugh, 'tongue': tongue };
 
-const neck = { 'bend-backward': bendBackwardNeck, 'bend-forward': bendForwardNeck, 'thick': thick, 'default': defaultNeck };
+const neck = { 'default': defaultNeck, 'bend-backward': bendBackwardNeck, 'bend-forward': bendForwardNeck, 'thick': thick };
 
 const images = {
   earings,
@@ -147,7 +147,7 @@ const images = {
 };
 
 export {
-  accessories, background, ears, eyes, hair, leg, mouth, neck, nose
+  accessories, backgrounds, ears, eyes, hair, leg, mouth, neck, nose
 };
 
 export default images;
