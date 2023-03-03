@@ -15,7 +15,7 @@ const initialState = {
   leg: 'default',
   mouth: 'default',
   neck: 'default',
-  nose: 'default'
+  // nose: 'default'
 };
 
 const accessorizeSlice = createSlice({
@@ -44,9 +44,23 @@ const accessorizeSlice = createSlice({
     },
     setStyleDefault: (state) => {
       state.selectedStyle = '';
+    },
+    setStyle: (state, action) => {
+      state.selectedStyle = action.payload;
+    },
+    setRandomImage: (state, action) => {
+      const { newAccessories, newBackground, newEar, newEye, newHair, newLeg, newMouth, newNeck } = action.payload;
+      state.accessories = newAccessories;
+      state.backgrounds = newBackground;
+      state.ears = newEar;
+      state.eyes = newEye;
+      state.hair = newHair;
+      state.leg = newLeg;
+      state.mouth = newMouth;
+      state.neck = newNeck;
     }
   },
 });
 
-export const { setSelectedButton, changeImage, setStyleDefault } = accessorizeSlice.actions;
+export const { setSelectedButton, changeImage, setStyleDefault, setStyle, setRandomImage } = accessorizeSlice.actions;
 export default accessorizeSlice.reducer;

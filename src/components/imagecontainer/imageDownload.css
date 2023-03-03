@@ -1,0 +1,22 @@
+.buttons__container {
+  display: flex;
+  justify-content: space-between;
+  width: 48.5%;
+}
+
+.buttons__container button {
+  padding: 15px;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #fff;
+}
+
+@media screen and (max-width: 490px) {
+  .buttons__container {
+    margin: 10px 0px;
+    width: 100%;
+  }
+}

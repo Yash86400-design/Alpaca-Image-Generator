@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './accessorizeStyle.css';
-import { accessories, backgrounds, ears, eyes, hair, leg, mouth, neck } from '../imagecontainer/imports';
+import { allAccessories, allBackgrounds, allEars, allEyes, allHair, allLeg, allMouth, allNeck } from '../imagecontainer/imports';
 import { useDispatch, useSelector } from 'react-redux';
-import { changeImage } from '../../features/accessorizeSlice';
+import { changeImage, setStyle } from '../../features/accessorizeSlice';
 
 function AccessorizeStyle() {
   const buttonName = useSelector((state) => state.accessorize.selectedButton);
@@ -16,50 +16,50 @@ function AccessorizeStyle() {
 
   // useState(() => {
   //   setActiveButton('');
-  // }, []);
+  // }, [defaultStyle]);
 
   let value;
   switch (buttonName) {
     case 'accessories':
-      value = accessories;
+      value = allAccessories;
       break;
 
-    case 'background':
-      value = backgrounds;
+    case 'backgrounds':
+      value = allBackgrounds;
       break;
 
     case 'ears':
-      value = ears;
+      value = allEars;
       break;
 
     case 'eyes':
-      value = eyes;
+      value = allEyes;
       break;
 
     case 'hair':
-      value = hair;
+      value = allHair;
       break;
 
     case 'leg':
-      value = leg;
+      value = allLeg;
       break;
 
     case 'mouth':
-      value = mouth;
+      value = allMouth;
       break;
 
     case 'neck':
-      value = neck;
+      value = allNeck;
       break;
 
     default:
       break;
   }
 
-  // console.log(defaultStyle);
-
+  // console.log(activeButton);
   useEffect(() => {
     dispatch(changeImage({ key: buttonName, value: activeButton }));
+    dispatch(setStyle(activeButton));
   }, [activeButton, dispatch]);
 
   // console.log(buttonName, activeButton);

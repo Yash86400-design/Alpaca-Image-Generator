@@ -1,23 +1,47 @@
-.container {
+/* .container {
   display: flex;
   flex-direction: column;
-}
+  justify-content: space-between;
+  position: relative;
+  height: auto;
+} */
 
 .image__container {
+  /* justify-content: flex-start; */
+  position: relative;
   width: 100%;
-  height: 400px;
+  height: 100%;
+  /* height: 350px; */
 }
 
-.buttons__container {
-  display: flex;
-  /* width: 48%; */
-  justify-content: space-between;
+.image__container .images {
+  position: absolute;
 }
 
-.buttons__container button {
-  padding: 15px;
-  border: none;
-  outline: none;
-  font-weight: bold;
-  border-radius: 10px;
+.image__container .backgrounds {
+  z-index: -10;
+
+}
+
+.image__container .accessories {
+  z-index: 3;
+}
+
+.image__container .eyes {
+  z-index: 4;
+}
+
+.image__container .hair {
+  z-index: 2;
+  /* left: 20px;
+  top: 5px; */
+}
+
+.image__container .mouth {
+  z-index: 1;
+}
+
+.image__container .images img {
+  width: 100%;
+  height: 100%;
 }

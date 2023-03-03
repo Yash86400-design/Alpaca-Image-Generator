@@ -1,6 +1,7 @@
 import React from 'react';
 import { AlpacaImage, Accessorize, AccessorizeStyle } from './components';
 import './App.css';
+import ImageDownload from './components/imagecontainer/ImageDownload';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <div className="alpaca__container">
         <div className="alpaca__container-left">
           <AlpacaImage />
+          <ImageDownload />
         </div>
 
         <div className="alpaca__container-right">

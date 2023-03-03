@@ -22,6 +22,25 @@
 .alpaca__container-left {
   flex: 0.5;
   margin-right: 20px;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.alpaca__container-left .container {
+  flex: 1;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.alpaca__container-left .buttons__container {
+  flex: 0.2;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
 }
 
 .alpaca__container-right {
@@ -70,6 +89,7 @@
   color: #fff;
 }
 
+
 @media screen and (max-width: 1050px) {
   .app__container {
     width: 80%;
@@ -81,6 +101,10 @@
   .app__container {
     width: 90%;
   }
+
+  .alpaca__container-left {
+    height: 400px;
+  }
 }
 
 @media screen and (max-width: 490px) {
@@ -88,7 +112,22 @@
     width: 100%;
     padding: 1rem;
   }
+
+  .app__container h2 {
+    font-size: 32px;
+  }
+
+  .alpaca__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .alpaca__container-left {
+    /* min-height: 400px; */
+    min-height: 50vh;
+  }
+
   .custom__buttons {
-    padding: 5px 10px;
+    padding: 10px 20px;
   }
 }

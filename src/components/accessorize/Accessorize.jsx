@@ -4,7 +4,7 @@ import { setSelectedButton, setStyleDefault } from '../../features/accessorizeSl
 import './accessorize.css';
 
 const accessorizeNames = [
-  'hair', 'ears', 'eyes', 'mouth', 'neck', 'leg', 'accessories', 'background'
+  'hair', 'ears', 'eyes', 'mouth', 'neck', 'leg', 'accessories', 'backgrounds'
 ];
 
 function Accessorize() {
