@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setRandomImage } from '../../features/accessorizeSlice';
 import { allAccessories, allBackgrounds, allEars, allEyes, allHair, allLeg, allMouth, allNeck, nose } from '../imagecontainer/imports';
+import html2canvas from 'html2canvas';
 
 import './alpacaImage.css';
 
@@ -10,7 +11,7 @@ function AlpacaImage() {
   /*  With the help of state I don't need any imageContainer, I can render 
   everything from here. From styles I will through change to state and from state I'll catch here and thus render the change on website on-time. That's it project is done🙂🙂.
   */
-
+  const dispatch = useDispatch();
   const { accessories, backgrounds, ears, eyes, hair, leg, mouth, neck } = useSelector((state) => state.accessorize);
 
   /*
@@ -40,7 +41,6 @@ function AlpacaImage() {
     console.log(bhai);
   */
 
-  const dispatch = useDispatch();
   const handleClick = () => {
     // I have to set the values of all the 8 things...
     let newAccessories, newBackground, newEar, newEye, newHair, newLeg, newMouth, newNeck;
@@ -90,9 +90,31 @@ function AlpacaImage() {
     // newAccessories = newAccessories[Math.floor(Math.random() * (Object.keys(allAccessories).length))];
   };
 
+  const downloadImage = () => {
+    /*
+    const element = document.getElementById('saveAlpaca');
+    html2canvas(element).then(function (canvas) {
+      canvas.toBlob(function (blob) {
+        window.saveAs(blob, "alpaca.png");
+      });
+    });
+    */
+    // window.scrollTo(0, 0);
+
+    html2canvas(document.getElementById('saveAlpaca')).then(function (canvas) {
+      const url = canvas.toDataURL("image/jpeg", 0.9);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "alpaca.png";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    });
+  };
+
   return (
     <div className="container">
-      <div className="image__container">
+      <div className="image__container" id='saveAlpaca'>
         {/*
         <ImageContainer accessories={defaultValues.accessories} backgrounds={defaultValues.backgrounds} ears={defaultValues.ears} eyes={defaultValues.eyes} hair={defaultValues.hair} leg={defaultValues.leg} mouth={defaultValues.mouth} neck={defaultValues.neck} nose={defaultValues.nose} />
         */}
@@ -126,7 +148,8 @@ function AlpacaImage() {
       </div>
       <div className="buttons__container">
         <button type='button' onClick={handleClick}>Random</button>
-        <button type='button'>Download</button>
+        {/* <canvas ref={canvasRef} /> */}
+        <button type='button' onClick={downloadImage}>Download</button>
       </div>
     </div>
   );

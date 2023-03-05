@@ -23,6 +23,7 @@
   flex: 0.5;
   margin-right: 20px;
   height: 550px;
+  /* height: 380px; */
   display: flex;
   flex-direction: column;
   position: relative;
